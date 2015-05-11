@@ -21,9 +21,8 @@ define(['jquery', 'awt/Stage', 'awt/Circle', 'lang/Class'], function($, Stage, C
      * @returns {void}
      */
     function keyBind(key, callback) {
-        // TODO; Complete the method.
+        // TODO: Complete the method.
     }
-
 	return Class.extend({
         /**
          * @type {Object}
@@ -44,6 +43,7 @@ define(['jquery', 'awt/Stage', 'awt/Circle', 'lang/Class'], function($, Stage, C
 		start: function () {
 			this.init();
 		},
+
         /**
          * update the game state.
          * @returns void
@@ -52,6 +52,7 @@ define(['jquery', 'awt/Stage', 'awt/Circle', 'lang/Class'], function($, Stage, C
 			this.clear();
 			this.render();
 		},
+
         /**
          * render the stage
          * @returns void

@@ -1,13 +1,14 @@
 var gulp = require('gulp');
 var livereload = require('gulp-livereload');
 var uglify = require('gulp-uglify');
-var clean = require('gulp-clean');
 var jshint = require('gulp-jshint');
 var rename = require('gulp-rename');
 var cssmin = require('gulp-cssmin');
 var less = require('gulp-less');
 var copy = require('gulp-copy');
+var del = require('del');
 var path = require('path');
+var stylish = require('jshint-stylish');
 
 gulp.task('compress', function() {
 	return gulp.src('src/**/*.js')
@@ -34,13 +35,17 @@ gulp.task('copy', function() {
 gulp.task('lint', function() {
 	return gulp.src('src/**/*.js')
 		.pipe(jshint())
-		.pipe(jshint.reporter('default'));
+		.pipe(jshint.reporter(stylish));
 });
 
 gulp.task('default', function() {
 	gulp.start(['lint', 'compress', 'less']);
 
 	gulp.watch(['src/**/*.js'], function() {
-		gulp.run(['lint', 'compress', 'less']);
+		gulp.run(['lint', 'compress']);
+	});
+
+	gulp.watch(['view/less/**/*.less'], function() {
+		gulp.run(['less']);
 	});
 });
