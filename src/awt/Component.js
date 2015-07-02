@@ -1,9 +1,9 @@
 /**
  * @module awt/Component
  */
-define(['lang/Class'], function(Class) {
+define(['lang/BaseObject'], function(BaseObject) {
 	"use strict";
-	return Class.extend({
+	return BaseObject.extend({
 		constructor: function() {
 			this._x = 0;
 			this._y = 0;

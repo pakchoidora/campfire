@@ -1,6 +1,8 @@
+
+
 define(function (require, exports, module) {
     "use strict";
-    var Class = function () {};
+    var BaseObject = function () {};
     var fnTest = /\b__super\b/;
 
     /**
@@ -8,13 +10,13 @@ define(function (require, exports, module) {
      * @param obj
      * @returns {exports.constructor}
      */
-    Class.clone = function (obj) {
+    BaseObject.clone = function (obj) {
         var newObj = (obj.constructor) ? new obj.constructor() : {};
         for (var key in obj) {
             if (obj.hasOwnProperty(key)) {
                 var copy = obj[key];
-                if (((typeof copy) == 'object') && copy && !(copy instanceof  Class) && !(copy instanceof HTMLElement)) {
-                    newObj[key] = Class.clone(copy);
+                if (((typeof copy) == 'object') && copy && !(copy instanceof BaseObject) && !(copy instanceof HTMLElement)) {
+                    newObj[key] = BaseObject.clone(copy);
                 } else {
                     newObj[key] = copy;
                 }
@@ -23,7 +25,7 @@ define(function (require, exports, module) {
         return newObj;
     };
 
-    Class.defineGetterSetter = function (proto, prop, getter, setter, getterName, setterName) {
+    BaseObject.defineGetterSetter = function (proto, prop, getter, setter, getterName, setterName) {
         if (proto.__defineGetter__) {
             getter && proto.__defineGetter__(prop, getter);  // jshint ignore: line
             setter && proto.__defineSetter__(prop, setter);  // jshint ignore: line
@@ -73,22 +75,22 @@ define(function (require, exports, module) {
         }
     };
 
-    Class.extend = function (protoProps, staticProps) {
-        var __super = this.prototype;
-        var prototype = Object.create(__super);
+    BaseObject.extend = function (protoProps, staticProps) {
+        
+        var prototype = Object.create(this.prototype);
 
         var desc = {writable: true, enumerable: false, configurable: true};
 
-        function SubClass() {
-            if (this.constructor && this.constructor != SubClass) {
+        var child = function () {
+            if (this.constructor && this.constructor != child) {
                 this.constructor.apply(this, arguments);
             }
-        }
+        };
 
-        SubClass.prototype = prototype;
+        child.prototype = prototype;
 
-        this.__getters__ && (SubClass.__getters__ = Class.clone(this.__getters__));  // jshint ignore: line
-        this.__setters__ && (SubClass.__setters__ = Class.clone(this.__setters__));  // jshint ignore: line
+        this.__getters__ && (child.__getters__ = BaseObject.clone(this.__getters__));  // jshint ignore: line
+        this.__setters__ && (child.__setters__ = BaseObject.clone(this.__setters__));  // jshint ignore: line
 
         function _generate_method_value(name, fn) {
             return function () {
@@ -103,7 +105,7 @@ define(function (require, exports, module) {
         function _generate_setters (element, index) {
             if (element == propertyName) {
                 setter = index;
-                Class.defineGetterSetter(prototype, propertyName, prop[name], prop[setter] ?
+                BaseObject.defineGetterSetter(prototype, propertyName, prop[name], prop[setter] ?
                     prop[setter] : prototype[setter], name, setter);
             }
         }
@@ -111,7 +113,7 @@ define(function (require, exports, module) {
         function _generate_getters (element, index) {
             if (element == propertyName) {
                 getter = index;
-                Class.defineGetterSetter(prototype, propertyName, prop[getter] ?
+                BaseObject.defineGetterSetter(prototype, propertyName, prop[getter] ?
                     prop[getter] : prototype[getter], prop[name], getter, name);
             }
         }
@@ -153,14 +155,14 @@ define(function (require, exports, module) {
         }
 
         // add implementation method
-        Class.implement = function (prop) {
+        BaseObject.implement = function (prop) {
             for (var name in prop) {
                 prototype[name] = prop[name];
             }
         };
 
-        SubClass.extend = this.extend;
-        return SubClass;
+        child.extend = this.extend;
+        return child;
     };
-    module.exports = Class;
+    module.exports = BaseObject;
 });

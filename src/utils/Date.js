@@ -1,5 +1,5 @@
-define(['lang/Class'], function(Class) {
-	return Class.extend({
+define(['lang/BaseObject'], function(BaseObject) {
+	return BaseObject.extend({
 		constructor: function() {
 			this.__date = new Date();
 		},

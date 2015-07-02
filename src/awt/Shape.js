@@ -1,6 +1,6 @@
-define(['lang/Class'], function(Class) {
+define(['lang/BaseObject'], function(BaseObject) {
 	"use strict";
-	return Class.extend({
+	return BaseObject.extend({
 		constructor: function (x, y, width, height) {
 			this._x = x || 0;
 			this._y = y || 0;

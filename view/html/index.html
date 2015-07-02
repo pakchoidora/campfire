@@ -8,24 +8,13 @@
         var require = {
            baseUrl: 'js',
 			paths: {
-				'jquery': '../libs/jquery/jquery.min',
-				'Backbone': '../libs/backbone/backbone-min',
-				'underscore': '../libs/underscore/underscore-min'
+				'jquery': '../libs/jquery/jquery.min'
 			},
             map: {
                 '*': {
                     css: 'require-css/css.min'
                 }
             },
-			shim: {
-				'Backbone': {
-					exports: 'Backbone',
-					deps: ['underscore', 'jquery']
-				},
-				'underscore': {
-					exports: '_'
-				}
-			},
 			waitSeconds: 15
 		};
 	</script>

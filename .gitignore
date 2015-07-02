@@ -4,11 +4,10 @@ build/
 
 .idea/
 
-app/js/
-
-app/css/
+.settings/
 
 *~
-
+*.swp
 *.bak
 
+dist/

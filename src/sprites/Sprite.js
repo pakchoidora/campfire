@@ -1,9 +1,9 @@
 /**
  * @module sprites/Sprite
  */
-define(['lang/Class'], function (Class) {
+define(['lang/BaseObject'], function (BaseObject) {
     "use strict";
-    return Class.extend({
+    return BaseObject.extend({
 
     });
 });

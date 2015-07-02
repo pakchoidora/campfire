@@ -1,7 +1,7 @@
 /**
  * @module lang/StringBuilder
  */
-define([], function() {
+define(function() {
 	function StringBuilder () {
 		this.__strings = [];
 	}

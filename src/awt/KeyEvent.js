@@ -1,4 +1,4 @@
-define([], function() {
+define(function() {
 	"use strict";
 	return {
 		KEY_LBUTTON: 1,

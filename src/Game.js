@@ -2,13 +2,14 @@
  * Game Application
  * @module Game
  */
-define(['jquery', 'awt/Stage', 'awt/Circle', 'lang/Class'], function($, Stage, Circle, Class) {
+define(['jquery', 'awt/Stage', 'awt/Circle', 'lang/BaseObject'], function($, Stage, Circle, BaseObject) {
     "use strict";
     /**
      * @private
      * @param {Event} evt
      */
     function handleKeyEvent(evt) {
+        // TODO: Complete the function.
 		switch(evt.keyCode) {
 			default:
 				break;
@@ -23,20 +24,24 @@ define(['jquery', 'awt/Stage', 'awt/Circle', 'lang/Class'], function($, Stage, C
     function keyBind(key, callback) {
         // TODO: Complete the method.
     }
-	return Class.extend({
+
+	return BaseObject.extend({
         /**
          * @type {Object}
          */
 		__stage: {},
+        
         /**
          * @type {Object}
          */
 		_graphics: {},
+        
         /**
          * milliseconds per frame last
          * @type {Number}
          */
 		__speed: 30,
+        
         /**
          * Start the game.
          */
@@ -46,7 +51,7 @@ define(['jquery', 'awt/Stage', 'awt/Circle', 'lang/Class'], function($, Stage, C
 
         /**
          * update the game state.
-         * @returns void
+         * @returns {void}
          */
 		update: function () {
 			this.clear();
@@ -55,7 +60,7 @@ define(['jquery', 'awt/Stage', 'awt/Circle', 'lang/Class'], function($, Stage, C
 
         /**
          * render the stage
-         * @returns void
+         * @returns {void}
          */
 		render: function () {
 			this.__stage.update();
@@ -63,7 +68,7 @@ define(['jquery', 'awt/Stage', 'awt/Circle', 'lang/Class'], function($, Stage, C
 
         /**
          * init the game application.
-         * @returns void
+         * @returns {void}
          */
 		init: function () {
 			$(window).on({
@@ -74,12 +79,12 @@ define(['jquery', 'awt/Stage', 'awt/Circle', 'lang/Class'], function($, Stage, C
 					evt.preventDefault();
 				}
 			});
-			$('div#content').append($('<div></div>').attr('id', 'stage'));
+			$('div#content').append($('<div>').attr('id', 'stage'));
 			this.__stage = new Stage('#stage');
 			this._graphics = this.__stage.graphics();
-			this.__circle = new Circle(this.__stage.width() / 2, this.__stage.height()/2, 50);
+			this.__circle = new Circle(this.__stage.width() / 2, this.__stage.height() / 2, 50);
 			this.__circle.fillColor('#222');
-            this.__circle_outer = new Circle(this.__stage.width() / 2, this.__stage.height()/2, 70);
+            this.__circle_outer = new Circle(this.__stage.width() / 2, this.__stage.height() / 2, 70);
             this.__circle_outer.fillColor('lightgreen');
 			this.__stage.add(this.__circle);
 			this.__stage.add(this.__circle_outer);
@@ -88,7 +93,7 @@ define(['jquery', 'awt/Stage', 'awt/Circle', 'lang/Class'], function($, Stage, C
 
         /**
          * pause the game.
-         * @returns void
+         * @returns {void}
          */
 		pause: function() {
 			clearInterval(this.__interval);
@@ -96,7 +101,7 @@ define(['jquery', 'awt/Stage', 'awt/Circle', 'lang/Class'], function($, Stage, C
 
         /**
          * resume the game when paused.
-         * @returns void
+         * @returns {void}
          */
 		resume: function() {
 			this.__interval = setInterval(this.update.bind(this), this.__speed);
@@ -104,11 +109,20 @@ define(['jquery', 'awt/Stage', 'awt/Circle', 'lang/Class'], function($, Stage, C
 
         /**
          * clear the game stage
-         * @returns void
+         * @returns {void}
          */
 		clear: function() {
 			this.__stage.clear();
 		},
+        
+        /**
+         * set the game's preferences
+         * @returns {void}
+         */
+        setting: function() {
+            // TODO: Complete the function.
+            keyBind();
+        },
 		handleKeyEvent: handleKeyEvent
 	});
 });

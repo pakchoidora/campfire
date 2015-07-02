@@ -18,25 +18,32 @@ define(['jquery', 'awt/Container'], function($, Container) {
                 .html(this.__scene);
             this._graphics = this.__scene.get(0).getContext('2d');
             // this._graphics = this.__scene.get(0).getContext('experimental-webgl');
-        }, width: function () {
+        },
+        width: function () {
             return this.__stage.width();
-        }, height: function () {
+        },
+        height: function () {
             return this.__stage.height();
-        }, add: function (child) {
+        },
+        add: function (child) {
             child.graphics(this._graphics);
             this.__childs.push(child);
-        }, remove: function (child) {
+        },
+        remove: function (child) {
             // TODO: remove from a list
-        }, graphics: function () {
+        },
+        graphics: function () {
             return this._graphics;
-        }, clear: function () {
+        },
+        clear: function () {
             this._graphics.globalCompositeOperation = 'source-over';
             this.__scene.attr({
                 width: this.width(),
                 height: this.height()
             });
             this._graphics.globalCompositeOperation = 'lighter';
-        }, update: function () {
+        },
+        update: function () {
             var index = this.__childs.length;
             while (index--) {
                 this.__childs[index].update();
