@@ -17,21 +17,22 @@ gulp.task('clean', function(callback) {
     return del([DIST], callback);
 });
 
-function _uglify(path) {
-    return gulp.src(path)
+function _uglify(options) {
+    var release = options && options['release'];
+    return gulp.src(FILTER['js'])
+        .pipe($.if(options && options['newer'], $.newer(DIST + 'js')))
+        .pipe($.if(!release, $.sourcemaps.init()))
         .pipe($.jshint())
         .pipe($.jshint.reporter(stylish))
         .pipe($.uglify({
-            mangle: true,
-            reporter: 'min'
+            mangle: true
         }))
+        .pipe($.if(!release, $.sourcemaps.write('./')))
         .pipe(gulp.dest(DIST + 'js'));
 }
 
-function _less(path) {
-    if (!Array.isArray(path)) {
-        path = [path];
-    }
+function _less(options) {
+    var path = Array.isArray(FILTER['less']) ? FILTER['less'] : [FILTER['less']];
     return gulp.src(path)
         .pipe($.less({
             paths: [path.join(__dirname, 'less', 'includes')]
@@ -40,26 +41,38 @@ function _less(path) {
         .pipe(gulp.dest(DIST + 'css'));
 }
 
-gulp.task('uglify', function() {
-    return _uglify(FILTER['js']);
+gulp.task('compile:scripts', function() {
+    return _uglify();
 });
 
-gulp.task('less', function() {
+gulp.task('compile:styles', function() {
     return _less(FILTER['less']);
 });
 
-gulp.task('copy', function() {
+gulp.task('statics', function() {
     return gulp.src([FILTER['res'], FILTER['html']])
         .pipe($.copy(DIST, {prefix: 2}));
 });
 
-gulp.task('default', ['copy', 'uglify', 'less'], function() {
+gulp.task('build', ['statics'], function() {
+    _uglify({
+        release: true
+    });
+    _less();
+});
 
-    gulp.watch(FILTER['js'], function(event) {
-        return _uglify(event.path);
+gulp.task('watch', function() {
+    gulp.watch(FILTER['js'], function() {
+        return _uglify({
+            newer: true
+        });
     });
 
-    gulp.watch(FILTER['less'], function(event) {
-        return _less(event.path);
+    gulp.watch(FILTER['less'], function() {
+        return _less();
     });
+});
+
+gulp.task('default', function() {
+    gulp.start(['statics', 'compile:scripts', 'compile:styles', 'watch']);
 });

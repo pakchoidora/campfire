@@ -1,4 +1,4 @@
 define(['lang/Class'], function(Class) {
-	"use strict";
-	return Class.extend({});
+    "use strict";
+    return Class.extend({});
 });

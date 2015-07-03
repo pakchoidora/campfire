@@ -3,7 +3,7 @@
  * @module awt/Stage
  */
 define(['jquery', 'awt/Container'], function($, Container) {
-	"use strict";
+    "use strict";
     return Container.extend({
         constructor: function (container) {
             this.__stage = typeof container == 'string' ? $(container) : container;

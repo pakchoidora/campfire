@@ -77,7 +77,9 @@ define(function (require, exports, module) {
 
     BaseObject.extend = function (protoProps, staticProps) {
         
-        var prototype = Object.create(this.prototype);
+        var __super = this.prototype;
+        
+        var prototype = Object.create(__super);
 
         var desc = {writable: true, enumerable: false, configurable: true};
 
