@@ -1,38 +1,26 @@
-var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
-var del = require('del');
-var path = require('path');
-var stylish = require('jshint-stylish');
-var amdOptimize = require('amd-optimize');
+const gulp = require('gulp');
+const $ = require('gulp-load-plugins')();
+const path = require('path');
+const stylish = require('jshint-stylish');
 
-var DIST = './dist/';
-var FILTER = {
-    res: 'view/res/**/*',
-    html: 'view/html/**/*',
-    less: 'view/less/**/*.less',
-    js: 'src/**/*.js'
+const DIST = './dist/';
+const FILTER = {
+    less: 'sources/styles/**/*.less',
+    js: 'sources/**/*.js'
 };
 
-gulp.task('clean', function(callback) {
-    return del([DIST], callback);
-});
-
-function _uglify(options) {
-    var release = options && options['release'];
+function _uglify() {
     return gulp.src(FILTER['js'])
-        .pipe($.if(options && options['newer'], $.newer(DIST + 'js')))
-        .pipe($.if(!release, $.sourcemaps.init()))
         .pipe($.jshint())
         .pipe($.jshint.reporter(stylish))
         .pipe($.uglify({
             mangle: true
         }))
-        .pipe($.if(!release, $.sourcemaps.write('./')))
         .pipe(gulp.dest(DIST + 'js'));
 }
 
 function _less(options) {
-    var path = Array.isArray(FILTER['less']) ? FILTER['less'] : [FILTER['less']];
+    let path = Array.isArray(FILTER['less']) ? FILTER['less'] : [FILTER['less']];
     return gulp.src(path)
         .pipe($.less({
             paths: [path.join(__dirname, 'less', 'includes')]
@@ -41,38 +29,39 @@ function _less(options) {
         .pipe(gulp.dest(DIST + 'css'));
 }
 
-gulp.task('compile:scripts', function() {
+gulp.task('hint', () => {
+    return gulp.src(FILTER['js'])
+        .pipe($.jshint())
+        .pipe($.jshint.reporter(stylish));
+});
+
+gulp.task('compile:scripts', () => {
     return _uglify();
 });
 
-gulp.task('compile:styles', function() {
+gulp.task('compile:styles', () => {
     return _less(FILTER['less']);
 });
 
-gulp.task('statics', function() {
-    return gulp.src([FILTER['res'], FILTER['html']])
-        .pipe($.copy(DIST, {prefix: 2}));
-});
-
-gulp.task('build', ['statics'], function() {
+gulp.task('build', ['statics'], () => {
     _uglify({
         release: true
     });
     _less();
 });
 
-gulp.task('watch', function() {
-    gulp.watch(FILTER['js'], function() {
+gulp.task('watch', () => {
+    gulp.watch(FILTER['js'], () => {
         return _uglify({
             newer: true
         });
     });
 
-    gulp.watch(FILTER['less'], function() {
+    gulp.watch(FILTER['less'], () => {
         return _less();
     });
 });
 
-gulp.task('default', function() {
-    gulp.start(['statics', 'compile:scripts', 'compile:styles', 'watch']);
+gulp.task('default', () => {
+    gulp.start(['compile:scripts', 'compile:styles', 'watch']);
 });

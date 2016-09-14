@@ -1,0 +1,15 @@
+{
+    "name": "campfire",
+    "version": "1.0.0",
+    "description": "Campfire",
+    "scripts": {
+        "start": "electron ."
+    },
+    "main": "index.js",
+    "keywords": [
+        "Electron",
+        "Campfire"
+    ],
+    "author": "Pakchoi",
+    "license": "MIT"
+}
