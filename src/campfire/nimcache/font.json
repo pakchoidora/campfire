@@ -1,0 +1,28 @@
+{"compile":[
+["/Users/pakchoi/Workspace/campfire/src/campfire/lib/stb_image_impl.c", "clang -c  -w  -I/usr/local/Cellar/nim/0.17.0/nim/lib -o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stb_image_impl.o /Users/pakchoi/Workspace/campfire/src/campfire/lib/stb_image_impl.c"],
+["/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/campfire_font.c", "clang -c  -w  -I/usr/local/Cellar/nim/0.17.0/nim/lib -o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/campfire_font.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/campfire_font.c"],
+["/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_system.c", "clang -c  -w  -I/usr/local/Cellar/nim/0.17.0/nim/lib -o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_system.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_system.c"],
+["/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/sdl2_sdl2.c", "clang -c  -w  -I/usr/local/Cellar/nim/0.17.0/nim/lib -o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/sdl2_sdl2.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/sdl2_sdl2.c"],
+["/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_macros.c", "clang -c  -w  -I/usr/local/Cellar/nim/0.17.0/nim/lib -o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_macros.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_macros.c"],
+["/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_unsigned.c", "clang -c  -w  -I/usr/local/Cellar/nim/0.17.0/nim/lib -o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_unsigned.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_unsigned.c"],
+["/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_strutils.c", "clang -c  -w  -I/usr/local/Cellar/nim/0.17.0/nim/lib -o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_strutils.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_strutils.c"],
+["/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_parseutils.c", "clang -c  -w  -I/usr/local/Cellar/nim/0.17.0/nim/lib -o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_parseutils.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_parseutils.c"],
+["/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_math.c", "clang -c  -w  -I/usr/local/Cellar/nim/0.17.0/nim/lib -o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_math.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_math.c"],
+["/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_algorithm.c", "clang -c  -w  -I/usr/local/Cellar/nim/0.17.0/nim/lib -o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_algorithm.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_algorithm.c"],
+["/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/campfire_stb_image.c", "clang -c  -w  -I/usr/local/Cellar/nim/0.17.0/nim/lib -o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/campfire_stb_image.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/campfire_stb_image.c"]
+],
+"link":[
+"/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stb_image_impl.o",
+"/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/campfire_font.o",
+"/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_system.o",
+"/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/sdl2_sdl2.o",
+"/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_macros.o",
+"/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_unsigned.o",
+"/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_strutils.o",
+"/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_parseutils.o",
+"/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_math.o",
+"/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_algorithm.o",
+"/Users/pakchoi/Workspace/campfire/src/campfire/nimcache/campfire_stb_image.o"
+],
+"linkcmd": "clang   -o /Users/pakchoi/Workspace/campfire/src/campfire/font  /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stb_image_impl.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/campfire_font.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_system.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/sdl2_sdl2.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_macros.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_unsigned.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_strutils.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_parseutils.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_math.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/stdlib_algorithm.o /Users/pakchoi/Workspace/campfire/src/campfire/nimcache/campfire_stb_image.o  -lm   -ldl"
+}
