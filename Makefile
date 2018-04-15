@@ -25,6 +25,7 @@ windows: $(SOURCES)
 	${NIMC} c -d:release -d:windows --threads:on -o:winversion/${APPNAME}.exe $(ENTRY)
 	cp -r assets winversion
 	cp config.ini winversion
+	cp *.dll winversion
 	unix2dos winversion/config.ini
 	find winversion/assets/ -name '*.wav' -delete
 	rm ${APPNAME}-${DATE}-win32.zip || true
