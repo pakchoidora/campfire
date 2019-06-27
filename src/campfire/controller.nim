@@ -1,5 +1,5 @@
 import sdl2
-import sdl2.gamecontroller
+import "sdl2/gamecontroller"
 
 type ControllerKind* = enum
   Keyboard
@@ -54,14 +54,14 @@ proc newController*(sdlControllerId: cint): Controller =
   echo "added game controller: ", sdlControllerId, ": ", result.kind, ": ", result.name
 
 proc update*(self: Controller) =
-  for i in 0..self.buttons.high:
+  for i in self.buttons.low..self.buttons.high:
     if self.buttons[i] >= 1:
       self.buttons[i] += 1
     if self.buttons[i] > 48:
       self.buttons[i] = 1
 
 proc postUpdate*(self: Controller) = 
-  for i in 0..self.axes.high:
+  for i in self.axes.low..self.axes.high:
     self.axes[i].previous = self.axes[i].current
 
 proc btn*(self: Controller, button: ControllerButton): bool = 

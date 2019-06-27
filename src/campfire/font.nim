@@ -24,19 +24,19 @@ proc setFont*(canvas: SurfacePtr, filename: string, chars: string): Font =
     quit(1)
 
   var newChar = false
-  let blankColor: Color = (pixels[0],pixels[1],pixels[2],pixels[3])
+  let blankColor: Color = (pixels[0'u8],pixels[1'u8],pixels[2'u8],pixels[3'u8])
   var currentRect: Rect = (cint(0),cint(0),cint(0),cint(0))
   var i = 0
   let stride = w*4
   for x in 0..w-1:
-    let color: Color = (pixels[x*4],pixels[x*4+1],pixels[x*4+2],pixels[x*4+3])
+    let color: Color = (pixels[uint8(x) * 4'u8],pixels[uint8(x)*4+1'u8],pixels[uint8(x)*4+2'u8],pixels[uint8(x)*4+3'u8])
     if color == blankColor:
       currentRect.w = x - currentRect.x
       if currentRect.w != 0:
         # go down until we find blank or h
         currentRect.h = h-1
         for y in 0..h-1:
-          let color: Color = (pixels[y*stride+x*4],pixels[y*stride+x*4+1],pixels[y*stride+x*4+2],pixels[y*stride+x*4+3])
+          let color: Color = (pixels[uint8(y) * uint8(stride)+uint8(x)*4'u8],pixels[uint8(y)*uint8(stride)+uint8(x)*4'u8+1'u8],pixels[uint8(y)*uint8(stride)+uint8(x)*4'u8+2'u8],pixels[uint8(y)*uint8(stride)+uint8(x)*4'u8+3'u8])
           if color == blankColor:
             currentRect.h = y - 2
         font.rects[cast[uint](chars[i])] = currentRect

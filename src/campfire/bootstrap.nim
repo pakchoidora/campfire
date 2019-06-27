@@ -1,6 +1,6 @@
 import sdl2
-import sdl2.joystick
-import sdl2.gamecontroller
+import "sdl2/joystick"
+import "sdl2/gamecontroller"
 
 import basic2d
 import math
@@ -17,8 +17,8 @@ import controller
 import font as ft
 import color
 
-import lib.stb_image_write
-import lib.stb_image
+import "lib/stb_image_write"
+import "lib/stb_image"
 
 export Controller
 export ControllerKind
@@ -400,8 +400,8 @@ when defined(opengl):
   import opengl
 
 when not defined(emscripten):
-  import sdl2.audio
-  import sdl2.mixer
+  import "sdl2/audio"
+  import "sdl2/mixer"
 
 proc clip*(x, y, w, h: int = 0) =
   if w == 0:
@@ -518,9 +518,8 @@ proc flip*() =
   when true:
     if frame mod 2 == 0:
       var frame = newSeq[uint8](screenWidth * screenHeight)
-      if frame != nil:
-        copyMem(frame[0].addr, swCanvas.pixels, swCanvas.pitch * swCanvas.h)
-        recordFrames.add([frame])
+      copyMem(frame[0].addr, swCanvas.pixels, swCanvas.pitch * swCanvas.h)
+      recordFrames.add([frame])
   
   sdl2.delay(0)
 
@@ -1424,9 +1423,9 @@ proc loadSpriteSheet*(filename: string) =
   var ipixels = spriteSheet[].getPixels()
   for y in 0..h-1:
     for x in 0..w-1:
-      let r = pixels[(y*w*4)+(x*4)]
-      let g = pixels[(y*w*4)+(x*4)+1]
-      let b = pixels[(y*w*4)+(x*4)+2]
+      let r = pixels[uint8(y*w*4)+uint8(x*4)]
+      let g = pixels[uint8(y*w*4)+uint8(x*4)+1]
+      let b = pixels[uint8(y*w*4)+uint8(x*4)+2]
       let c = mapRGB(spriteSheet.format, r,g,b)
       ipixels[y * spriteSheet.pitch + x] = c.uint8
 

@@ -4,16 +4,16 @@
 
 type
   Components* {.size: sizeof(cint).} = enum
-  Default = 0 # req_comp only
-  Grey = 1
-  GreyAlpha = 2
-  Rgb = 3
-  RgbAlpha = 4
+    Default = 0 # req_comp only
+    Grey = 1
+    GreyAlpha = 2
+    Rgb = 3
+    RgbAlpha = 4
 
   IoCallbacks* {.final.} = object
-  read*: proc(user: pointer, data: ptr cchar, size: cint): cint
-  skip*: proc(user: pointer, n: cint)
-  user*: proc(user: pointer): cint
+    read*: proc(user: pointer, data: ptr cchar, size: cint): cint
+    skip*: proc(user: pointer, n: cint)
+    user*: proc(user: pointer): cint
 
 proc load*(filename: cstring, x: ptr cint, y: ptr cint, comp: ptr Components, req_comp: Components): ptr cuchar {.importc: "stbi_load",cdecl.}
 proc load_from_memory*(buffer: ptr cuchar, len: cint, x: ptr cint, y: ptr cint, comp: ptr Components, req_comp: Components): ptr cuchar {.importc: "stbi_load_from_memory".}
