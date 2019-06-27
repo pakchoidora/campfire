@@ -319,6 +319,25 @@ N_NIMCALL(NF, round_FL9bhksfuQsfLDCxRHuknsg)(NF x, NI places) {
 	LA1_: ;
 	return result;
 }
+
+N_NIMCALL(NF, mod_sGqENdekUaHyJla6nH3ncQ)(NF x, NF y) {
+	NF result;
+	result = (NF)0;
+	{
+		if (!(y == 0.0)) goto LA3_;
+		result = x;
+	}
+	goto LA1_;
+	LA3_: ;
+	{
+		NF T6_;
+		T6_ = (NF)0;
+		T6_ = floor(((NF)(x) / (NF)(y)));
+		result = ((NF)(x) - (NF)(((NF)(y) * (NF)(T6_))));
+	}
+	LA1_: ;
+	return result;
+}
 NIM_EXTERNC N_NOINLINE(void, stdlib_mathInit000)(void) {
 	nimfr_("math", "math.nim")
 	popFrame();

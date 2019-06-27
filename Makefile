@@ -7,19 +7,22 @@ SOURCES = $(shell find src -name '*.nim')
 ENTRY = src/campfire.nim
 
 $(APPNAME)-debug: src/*.nim
-	$(NIMC) c -d:debug -o:$@ $(ENTRY)
+	$(NIMC) c -d:debug -o:build/$@ $(ENTRY)
+	cp assets/config.ini build
 
 $(APPNAME): src/*.nim
-	$(NIMC) c -d:release -o:$@ $(ENTRY)
+	$(NIMC) c -d:release -o:build/$@ $(ENTRY)
 
 clean:
 	rm -vrf src/nimcache $(APPNAME) $(APPNAME)-debug || true
 
 run: $(APPNAME)
-	./$(APPNAME)
+	cp -r assets build
+	./build/$(APPNAME)
 
 rund: $(APPNAME)-debug
-	./$(APPNAME)-debug
+	cp -r assets build
+	./build/$(APPNAME)-debug
 
 windows: $(SOURCES)
 	${NIMC} c -d:release -d:windows --threads:on -o:winversion/${APPNAME}.exe $(ENTRY)

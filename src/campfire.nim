@@ -1,117 +1,90 @@
-import sequtils
+import glm
 import strutils
-import algorithm
 import json
+import algorithm
+import sequtils
 import math
 
-import glm
-
 import campfire.bootstrap
+import campfire.entity
 import campfire.util
-import campfire.pool
 import campfire.tween
+import campfire.pool
 
 {.this:self.}
 
 type SFX = enum
-    sfxDrop
-    sfxMove
-    sfxGrab
-    sfxLand
-    sfxTakeoff
-    sfxHeart
-    sfxCross
-    sfxSuccess
-    sfxFailure
-    sfxHyperdrive
-    sfxEat
-    sfxGlomp
-    sfxBump
-    sfxCursor
-    sfxAborted
+  sfxStart
+  sfxMove
 
 converter toInt*(sfx: SFX): SfxId =
-    return sfx.SfxId
+  return sfx.SfxId
 
 type ParticleKind = enum
-    heartParticle
-    crossParticle
-    dustParticle
-    bloodParticle
+  heartParticle
 
 type Particle = object
-    kind: ParticleKind
-    pos: Vec2f
-    vel: Vec2f
-    ttl: float
-    maxttl: float
-    above: bool
-
-type Object = ref object of RootObj
-    killed: bool
-    name: string
-    description: string
-    pos: Vec2i
-    size: Vec2i
-
-type Movable = ref object of Object
-    originalPos: Vec2i
-    lastPos: Vec2i
-    alpha: float
+  kind: ParticleKind
+  pos: Vec2f
+  vel: Vec2f
+  ttl: float
+  maxttl: float
+  above: bool
 
 type Message = object
-    text: string
-    step: int
-    ttl: float
+  text: string
+  step: int
+  ttl: float
 
-proc getViewPos(self: Movable): Vec2i =
-    let currentPos = vec2f(float(pos.x * 16), float(pos.y * 16))
-    let lastPos = vec2f(float(lastPos.x * 16), float(lastPos.y * 16))
-    return tween.easeOutCubic(alpha, lastPos, currentPos - lastPos).vec2i + (if Object(self) == cursorObject: vec2i(0, -4) else: vec2i(0, 0))
+type Movable = ref object of Entity
+  original: Vec2i
+  lastPos: Vec2i
+  alpha: float
 
-proc dummyInit()
-proc menuInit()
-proc menuUpdate(dt: float)
-proc menuDraw()
-
-method draw(self: Object) {.base.} =
-    discard
-
-method update(self: Object, dt: float) {.base.} =
-    discard
-
-var camera: Vec2f
-var objects: seq[Object]
+# GLOBALS
+var levelId: int
+var nextLevelId: int
+var previousLevelId: int = -1
+var unlockedLevel: float
+var levelsCompleted: array[32, int]
+var alpha = 0.0
+var cursorObject: Entity
 var shake: float = 0.0
 var time: float = 0.0
+var scanning: bool
+var particles: Pool[Particle]
+var confirmAbort: bool
 var messages: seq[Message]
 
-var moveBuffer: seq[Vec2i]
+var camera: Vec2f
 
+proc getViewPos(self: Movable): Vec2i =
+  let currentPos = vec2f(float(pos.x * 16), float(pos.y * 16))
+  let lastPos = vec2f(float(lastPos.x * 16), float(lastPos.y * 16))
+  return tween.easeOutCubic(alpha, lastPos, currentPos - lastPos).vec2i
 
+proc gameInit() =
+  particles = initPool[Particle](512)
+  time = 0.0
 
-proc dummyInit() =
-    discard
+proc gameUpdate(dt: float) =
+  time += dt
 
-proc menuInit() =
-    discard
-
-proc menuUpdate(dt: float) =
-    if btnp(pcStart):
-        discard
-    discard
-
-proc menuDraw() =
-    discard
+proc gameDraw() =
+  # background
+  setCamera()
+  cls()
 
 proc introInit() =
-    discard
+  gameInit()
 
 proc introUpdate(dt: float) =
-    discard
+  if btn(pcB):
+    echo true
+  discard
 
 proc introDraw() =
-    discard
+  discard
 
-bootstrap.init()
+bootstrap.init("Campfire")
 bootstrap.run(introInit, introUpdate, introDraw)

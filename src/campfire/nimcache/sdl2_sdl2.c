@@ -22,6 +22,19 @@ typedef struct Palette_D3H7z9cPmFr0tk2z8jKdcYg Palette_D3H7z9cPmFr0tk2z8jKdcYg;
 typedef struct TY_Xo4YhcsfLAmbGDNu1Obfcw TY_Xo4YhcsfLAmbGDNu1Obfcw;
 typedef struct TGenericSeq TGenericSeq;
 typedef struct NimStringDesc NimStringDesc;
+typedef struct RendererPtrcolonObjectType__RZ5I89cPVLRdJchBQYVCSfg RendererPtrcolonObjectType__RZ5I89cPVLRdJchBQYVCSfg;
+typedef struct TexturePtrcolonObjectType__6n0oqQPDsaMFNhtiJ29bOXw TexturePtrcolonObjectType__6n0oqQPDsaMFNhtiJ29bOXw;
+typedef struct WindowPtrcolonObjectType__8bMU2xl1xmmMvYcskTOB4w WindowPtrcolonObjectType__8bMU2xl1xmmMvYcskTOB4w;
+typedef struct MouseWheelEventObj_XL6XlXxawDE0K4y7eEOqtg MouseWheelEventObj_XL6XlXxawDE0K4y7eEOqtg;
+typedef struct MouseButtonEventObj_ahKE9c3Zfqc3CPLu4G61DYw MouseButtonEventObj_ahKE9c3Zfqc3CPLu4G61DYw;
+typedef struct ControllerDeviceEventObj_bJ8BUI9cpm49brtlN8sw6C9cg ControllerDeviceEventObj_bJ8BUI9cpm49brtlN8sw6C9cg;
+typedef struct ControllerButtonEventObj_iK49bb6NrW4W2tmwGPEnoEg ControllerButtonEventObj_iK49bb6NrW4W2tmwGPEnoEg;
+typedef struct ControllerAxisEventObj_9cAGKChsgWcmSe2jRpXieaw ControllerAxisEventObj_9cAGKChsgWcmSe2jRpXieaw;
+typedef struct WindowEventObj_d6XCemaEKzK59bxf1YxrwlA WindowEventObj_d6XCemaEKzK59bxf1YxrwlA;
+typedef struct KeyboardEventObj_T9cLiQTAfT4u62zIltLlWzQ KeyboardEventObj_T9cLiQTAfT4u62zIltLlWzQ;
+typedef struct RWops_CLIyzMHHcrhaNlCqUuM1OA RWops_CLIyzMHHcrhaNlCqUuM1OA;
+typedef struct KeySym_y3t7PyKCT9aYLDh9bLHT3UPw KeySym_y3t7PyKCT9aYLDh9bLHT3UPw;
+typedef struct Mem_Y7I9bNHWVNgY3LblplAgArw Mem_Y7I9bNHWVNgY3LblplAgArw;
 typedef NI32 EventType_9ayvRjKFMoE6pV9bOp5OUI5w;
 typedef NU8 TY_Y1pDC6KIrpu9aJMBN9aOQMhw[52];
 struct  Event_Uzh9aP43ffUpM9aa6vZvNEug  {
@@ -119,12 +132,152 @@ NIM_CHAR data[SEQ_DECL_SIZE];
 typedef N_CDECL_PTR(Surface_sOGmuBWrSv9c4mZ0oaW1R1w*, TY_9br0blXFlJAjbk9cGDwi8EgA) (void* pixels, int width, int height, int depth, int pitch, NU32 Rmask, NU32 Gmask, NU32 Bmask, NU32 Amask);
 typedef N_CDECL_PTR(Surface_sOGmuBWrSv9c4mZ0oaW1R1w*, TY_OlsILfsIzW9b2h6RP9cRx1pQ) (Surface_sOGmuBWrSv9c4mZ0oaW1R1w* src, PixelFormat_xqbq9cabb4AcV4cRzuGg5Dg* fmt, int flags);
 typedef N_CDECL_PTR(NCSTRING, TY_09bvyvHFtWbkzL5AHgf0bKw) (void);
+typedef N_CDECL_PTR(NU32, TY_ZBJ5GRli6YRWUmwPMxvXiw) (void);
+typedef NI32 Scancode_ZC4j1APU9aAJPXuZfLFUG0w;
+typedef N_CDECL_PTR(Scancode_ZC4j1APU9aAJPXuZfLFUG0w, TY_8bKtXZcxYnKUJLFwBU2xmw) (NCSTRING name);
+typedef N_CDECL_PTR(NCSTRING, TY_6jJGBhZP5UsQBecZAlW9bUg) (int key);
+typedef N_CDECL_PTR(int, TY_24AcZiuGxj9aAIKC1Z9aBKgw) (Scancode_ZC4j1APU9aAJPXuZfLFUG0w scancode);
+typedef N_CDECL_PTR(NU8*, TY_J1PDbNq7uKOgh20mdTxcDg) (NI* numkeys);
+typedef NI32 SDL_Return_8wc8or7UFANAtbisKJq7lw;
+typedef N_CDECL_PTR(SDL_Return_8wc8or7UFANAtbisKJq7lw, TY_vfBise28cLJJujY6ZnHPIw) (RendererPtrcolonObjectType__RZ5I89cPVLRdJchBQYVCSfg* renderer, TexturePtrcolonObjectType__6n0oqQPDsaMFNhtiJ29bOXw* texture);
+typedef N_CDECL_PTR(SDL_Return_8wc8or7UFANAtbisKJq7lw, TY_EH6q2UEpsQbudAOirVaRhQ) (TexturePtrcolonObjectType__6n0oqQPDsaMFNhtiJ29bOXw* texture, TY_Ye8PLO8qqXk1tek2VP9c0UQ* rect, void* pixels, int pitch);
+typedef N_CDECL_PTR(SDL_Return_8wc8or7UFANAtbisKJq7lw, TY_BzAZji9bzvN1k9ae25rIlb8A) (RendererPtrcolonObjectType__RZ5I89cPVLRdJchBQYVCSfg* renderer, NU8 r, NU8 g, NU8 b, NU8 a);
+typedef N_CDECL_PTR(int, TY_zHpDbFN4o9bvP9cAphXAUHXg) (RendererPtrcolonObjectType__RZ5I89cPVLRdJchBQYVCSfg* renderer);
+typedef N_CDECL_PTR(SDL_Return_8wc8or7UFANAtbisKJq7lw, TY_wbFMpEnGfJo5HTFBx413GA) (RendererPtrcolonObjectType__RZ5I89cPVLRdJchBQYVCSfg* renderer, TexturePtrcolonObjectType__6n0oqQPDsaMFNhtiJ29bOXw* texture, TY_Ye8PLO8qqXk1tek2VP9c0UQ* srcrect, TY_Ye8PLO8qqXk1tek2VP9c0UQ* dstrect);
+typedef N_CDECL_PTR(void, TY_9a8AalbnAaIxTUMpzQQqpjw) (RendererPtrcolonObjectType__RZ5I89cPVLRdJchBQYVCSfg* renderer);
+typedef N_CDECL_PTR(void, TY_CGFSM2Hc7U0HyNmEEh3xng) (NU32 ms);
+typedef N_CDECL_PTR(SDL_Return_8wc8or7UFANAtbisKJq7lw, TY_gk5XfBB59a479c3sEPSMZUOg) (Surface_sOGmuBWrSv9c4mZ0oaW1R1w* dst, TY_Ye8PLO8qqXk1tek2VP9c0UQ* rect, NU32 color);
+typedef N_CDECL_PTR(Surface_sOGmuBWrSv9c4mZ0oaW1R1w*, TY_jhdVmRFWTpNd1iR9aS9c5hQQ) (int flags, int width, int height, int depth, NU32 Rmask, NU32 Gmask, NU32 BMask, NU32 Amask);
+typedef N_CDECL_PTR(int, TY_zQuulNED1MWFt3geigWzvg) (RendererPtrcolonObjectType__RZ5I89cPVLRdJchBQYVCSfg* renderer, TY_Ye8PLO8qqXk1tek2VP9c0UQ* rect, int format, void* pixels, int pitch);
+typedef N_CDECL_PTR(void, TY_qBZJbpNSUKmN7D9cXKfuoeg) (Surface_sOGmuBWrSv9c4mZ0oaW1R1w* surface);
+typedef N_CDECL_PTR(NU8, TY_yLg9aKhE9aoiOkMB0pzXMlyg) (int* x, int* y);
+typedef N_CDECL_PTR(SDL_Return_8wc8or7UFANAtbisKJq7lw, TY_V9bZBkxVuJzbGuMjLg1FVUw) (WindowPtrcolonObjectType__8bMU2xl1xmmMvYcskTOB4w* window, NU32 fullscreen);
+typedef N_CDECL_PTR(TexturePtrcolonObjectType__6n0oqQPDsaMFNhtiJ29bOXw*, TY_3xgAKCPZlTDmyFCl87eZgg) (RendererPtrcolonObjectType__RZ5I89cPVLRdJchBQYVCSfg* renderer, NU32 format, int access, int w, int h);
+typedef NI32 TextureAccess_lHfWejC67dkj9bzL3rlYUdw;
+typedef N_CDECL_PTR(SDL_Return_8wc8or7UFANAtbisKJq7lw, TY_kIyA9c9bffk59bCZDzZS0sc8g) (Palette_D3H7z9cPmFr0tk2z8jKdcYg* palette, TY_Xo4YhcsfLAmbGDNu1Obfcw* colors, int first, int numColors);
+typedef N_CDECL_PTR(int, TY_FdNQc14l0KrdlpQKlTQjEA) (RendererPtrcolonObjectType__RZ5I89cPVLRdJchBQYVCSfg* renderer, int w, int h);
+typedef N_CDECL_PTR(void, TY_qINgM1UYlIsWdn51nn0qrQ) (WindowPtrcolonObjectType__8bMU2xl1xmmMvYcskTOB4w* window, int w, int h);
+typedef NI32 Bool32_lrv4aZgVTmBUYdrYUkLMlg;
+typedef N_CDECL_PTR(SDL_Return_8wc8or7UFANAtbisKJq7lw, TY_gHZVvnv6jeg9cI9brLoWECJw) (Bool32_lrv4aZgVTmBUYdrYUkLMlg enabled);
+typedef NI32 Keymod_Ezy2rGsnAFwkomNIvFNZ1A;
+typedef N_CDECL_PTR(NU32, TY_m9cok4JvX7n8tIbkphyvkhw) (WindowPtrcolonObjectType__8bMU2xl1xmmMvYcskTOB4w* window);
+typedef N_CDECL_PTR(Bool32_lrv4aZgVTmBUYdrYUkLMlg, TY_b9aXpKFbsyZ0PIk3aYRVCAA) (Event_Uzh9aP43ffUpM9aa6vZvNEug* event);
+typedef N_CDECL_PTR(void, TY_wFKHMJeFuSq6GTOGu9c9ayaw) (WindowPtrcolonObjectType__8bMU2xl1xmmMvYcskTOB4w* window, NCSTRING title);
+typedef N_CDECL_PTR(NU32, TY_J5qn9cllF8g9bqRSS9bVM9avbw) (PixelFormat_xqbq9cabb4AcV4cRzuGg5Dg* format, NU8 r, NU8 g, NU8 b);
+typedef N_CDECL_PTR(RWops_CLIyzMHHcrhaNlCqUuM1OA*, TY_WLF2LPFZnB469bJx7k0rQDg) (NCSTRING file, NCSTRING mode);
+typedef N_CDECL_PTR(NIM_BOOL, TY_CS9bxA1KE4RHFQ1vMCkCBmg) (NCSTRING name, NCSTRING value);
+typedef N_CDECL_PTR(SDL_Return_8wc8or7UFANAtbisKJq7lw, TY_fvOXafK39cW5YZA9b9bzinu9cw) (int flags);
+typedef N_CDECL_PTR(NCSTRING, TY_LR0DuTVmiHsWUuG5hbpBOQ) (NCSTRING org, NCSTRING app);
+typedef N_CDECL_PTR(void, TY_ln4kdL5W9bbX4a1xl8nnVXQ) (void);
+typedef N_CDECL_PTR(WindowPtrcolonObjectType__8bMU2xl1xmmMvYcskTOB4w*, TY_1K9aSViCbSUpZMtRI9aw9a2Rg) (NCSTRING title, int x, int y, int w, int h, NU32 flags);
+typedef N_CDECL_PTR(RendererPtrcolonObjectType__RZ5I89cPVLRdJchBQYVCSfg*, TY_eGPD9aEHv9b8sVQMCQaPsYkg) (WindowPtrcolonObjectType__8bMU2xl1xmmMvYcskTOB4w* window, int index, int flags);
+typedef N_CDECL_PTR(Bool32_lrv4aZgVTmBUYdrYUkLMlg, TY_CWVVjvObnKbXecMOP3ypVQ) (NIM_BOOL toggle);
+struct  RendererPtrcolonObjectType__RZ5I89cPVLRdJchBQYVCSfg  {
+char dummy;
+};
+struct  TexturePtrcolonObjectType__6n0oqQPDsaMFNhtiJ29bOXw  {
+char dummy;
+};
+struct  WindowPtrcolonObjectType__8bMU2xl1xmmMvYcskTOB4w  {
+char dummy;
+};
+typedef NI32 MouseWheelDirection_ndQsZIBTF1N2Cb9c7mV9b2VQ;
+struct  MouseWheelEventObj_XL6XlXxawDE0K4y7eEOqtg  {
+EventType_9ayvRjKFMoE6pV9bOp5OUI5w kind;
+NU32 timestamp;
+NU32 windowID;
+NU32 which;
+int x;
+int y;
+MouseWheelDirection_ndQsZIBTF1N2Cb9c7mV9b2VQ direction;
+};
+struct  MouseButtonEventObj_ahKE9c3Zfqc3CPLu4G61DYw  {
+EventType_9ayvRjKFMoE6pV9bOp5OUI5w kind;
+NU32 timestamp;
+NU32 windowID;
+NU32 which;
+NU8 button;
+NU8 state;
+NU8 clicks;
+NU8 pad2;
+int x;
+int y;
+};
+struct  ControllerDeviceEventObj_bJ8BUI9cpm49brtlN8sw6C9cg  {
+EventType_9ayvRjKFMoE6pV9bOp5OUI5w kind;
+NU32 timestamp;
+NI32 which;
+};
+struct  ControllerButtonEventObj_iK49bb6NrW4W2tmwGPEnoEg  {
+EventType_9ayvRjKFMoE6pV9bOp5OUI5w kind;
+NU32 timestamp;
+NI32 which;
+NU8 button;
+NU8 state;
+};
+struct  ControllerAxisEventObj_9cAGKChsgWcmSe2jRpXieaw  {
+EventType_9ayvRjKFMoE6pV9bOp5OUI5w kind;
+NU32 timestamp;
+NI32 which;
+NU8 axis;
+NU8 pad1;
+NU8 pad2;
+NU8 pad3;
+NI16 value;
+};
+typedef NU8 WindowEventID_qlyMtQ19b0uMsXgE0vQ3Diw;
+struct  WindowEventObj_d6XCemaEKzK59bxf1YxrwlA  {
+EventType_9ayvRjKFMoE6pV9bOp5OUI5w kind;
+NU32 timestamp;
+NU32 windowID;
+WindowEventID_qlyMtQ19b0uMsXgE0vQ3Diw event;
+NU8 pad1;
+NU8 pad2;
+NU8 pad3;
+int data1;
+int data2;
+};
+struct  KeySym_y3t7PyKCT9aYLDh9bLHT3UPw  {
+Scancode_ZC4j1APU9aAJPXuZfLFUG0w scancode;
+int sym;
+NI16 modstate;
+int unicode;
+};
+struct  KeyboardEventObj_T9cLiQTAfT4u62zIltLlWzQ  {
+EventType_9ayvRjKFMoE6pV9bOp5OUI5w kind;
+NU32 timestamp;
+NU32 windowID;
+NU8 state;
+NIM_BOOL repeat;
+NU8 pad1;
+NU8 pad2;
+KeySym_y3t7PyKCT9aYLDh9bLHT3UPw keysym;
+};
+typedef N_CDECL_PTR(NI64, TY_pv8LHGd6Yei89cd2Rd8hv8g) (RWops_CLIyzMHHcrhaNlCqUuM1OA* context);
+typedef N_CDECL_PTR(NI64, TY_0zChuivuFV72gZwz2rUkHA) (RWops_CLIyzMHHcrhaNlCqUuM1OA* context, NI64 offset, int whence);
+typedef N_CDECL_PTR(size_t, TY_i5pcx3FBdKHMUS2uvRgvYw) (RWops_CLIyzMHHcrhaNlCqUuM1OA* context, void* destination, size_t size, size_t maxnum);
+typedef N_CDECL_PTR(int, TY_LaZp89cSat1m2LqumdMScDw) (RWops_CLIyzMHHcrhaNlCqUuM1OA* context);
+struct  Mem_Y7I9bNHWVNgY3LblplAgArw  {
+NU8* base;
+NU8* here;
+NU8* stop;
+};
+struct  RWops_CLIyzMHHcrhaNlCqUuM1OA  {
+TY_pv8LHGd6Yei89cd2Rd8hv8g size;
+TY_0zChuivuFV72gZwz2rUkHA seek;
+TY_i5pcx3FBdKHMUS2uvRgvYw read;
+TY_i5pcx3FBdKHMUS2uvRgvYw write;
+TY_LaZp89cSat1m2LqumdMScDw close;
+int kind;
+Mem_Y7I9bNHWVNgY3LblplAgArw mem;
+};
 N_NIMCALL(void*, nimLoadLibrary)(NimStringDesc* path);
 N_NOINLINE(void, nimLoadLibraryError)(NimStringDesc* path);
 N_NIMCALL(void*, nimGetProcAddr)(void* lib, NCSTRING name);
 static N_INLINE(void, nimFrame)(TFrame* s);
 N_NOINLINE(void, stackOverflow_II46IjNZztN9bmbxUD8dt8g)(void);
 static N_INLINE(void, popFrame)(void);
+N_NIMCALL(void, failedAssertImpl_aDmpBTs9cPuXp0Mp9cfiNeyA)(NimStringDesc* msg);
 Event_Uzh9aP43ffUpM9aa6vZvNEug defaultEvent_LbtYyFPe9bpTC9bKZ8rWJeKQ;
 TNimType NTI_Ye8PLO8qqXk1tek2VP9c0UQ_;
 extern TNimType NTI_nlCscttRCss70IBTyuBqnA_;
@@ -144,12 +297,57 @@ TNimType NTI_uPOUAQyskDVXmxvDq3Wk3g_;
 TNimType NTI_b9aNkg9b2aue9bOhT1uu43DYg_;
 TNimType NTI_RHOlqbW8lSkSefXk1XWVIw_;
 static void* TM_ZcjcXgoBjElsmUGY1Ljosg_7;
-TY_9br0blXFlJAjbk9cGDwi8EgA Dl_140058_;
-TY_OlsILfsIzW9b2h6RP9cRx1pQ Dl_140168_;
-TY_09bvyvHFtWbkzL5AHgf0bKw Dl_140654_;
+TY_9br0blXFlJAjbk9cGDwi8EgA Dl_223058_;
+TY_OlsILfsIzW9b2h6RP9cRx1pQ Dl_223168_;
+TY_09bvyvHFtWbkzL5AHgf0bKw Dl_223654_;
 extern TFrame* framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
+TY_ZBJ5GRli6YRWUmwPMxvXiw Dl_223397_;
+TY_8bKtXZcxYnKUJLFwBU2xmw Dl_223485_;
+TY_6jJGBhZP5UsQBecZAlW9bUg Dl_223488_;
+TY_24AcZiuGxj9aAIKC1Z9aBKgw Dl_223476_;
+TY_J1PDbNq7uKOgh20mdTxcDg Dl_223464_;
+TY_vfBise28cLJJujY6ZnHPIw Dl_222904_;
+TY_EH6q2UEpsQbudAOirVaRhQ Dl_222882_;
+TY_BzAZji9bzvN1k9ae25rIlb8A Dl_222617_;
+TY_zHpDbFN4o9bvP9cAphXAUHXg Dl_223017_;
+TY_wbFMpEnGfJo5HTFBx413GA Dl_222988_;
+TY_9a8AalbnAaIxTUMpzQQqpjw Dl_223036_;
+TY_CGFSM2Hc7U0HyNmEEh3xng Dl_223403_;
+TY_gk5XfBB59a479c3sEPSMZUOg Dl_223189_;
+TY_jhdVmRFWTpNd1iR9aS9c5hQQ Dl_223048_;
+TY_zQuulNED1MWFt3geigWzvg Dl_223028_;
+TY_qBZJbpNSUKmN7D9cXKfuoeg Dl_223069_;
+TY_yLg9aKhE9aoiOkMB0pzXMlyg Dl_223516_;
+TY_V9bZBkxVuJzbGuMjLg1FVUw Dl_222719_;
+TY_3xgAKCPZlTDmyFCl87eZgg Dl_222826_;
+TY_kIyA9c9bffk59bCZDzZS0sc8g Dl_223696_;
+TY_FdNQc14l0KrdlpQKlTQjEA Dl_222606_;
+TY_qINgM1UYlIsWdn51nn0qrQ Dl_222704_;
+TY_gHZVvnv6jeg9cI9brLoWECJw Dl_223534_;
+TY_m9cok4JvX7n8tIbkphyvkhw Dl_222670_;
+TY_b9aXpKFbsyZ0PIk3aYRVCAA Dl_223605_;
+TY_wFKHMJeFuSq6GTOGu9c9ayaw Dl_222673_;
+TY_J5qn9cllF8g9bqRSS9bVM9avbw Dl_223708_;
+TY_WLF2LPFZnB469bJx7k0rQDg Dl_223087_;
+TY_CS9bxA1KE4RHFQ1vMCkCBmg Dl_224006_;
+TY_fvOXafK39cW5YZA9b9bzinu9cw Dl_222765_;
+TY_09bvyvHFtWbkzL5AHgf0bKw Dl_222789_;
+TY_LR0DuTVmiHsWUuG5hbpBOQ Dl_222791_;
+TY_ln4kdL5W9bbX4a1xl8nnVXQ Dl_222777_;
+TY_1K9aSViCbSUpZMtRI9aw9a2Rg Dl_223356_;
+TY_eGPD9aEHv9b8sVQMCQaPsYkg Dl_222811_;
+TY_CWVVjvObnKbXecMOP3ypVQ Dl_223578_;
 STRING_LITERAL(TM_ZcjcXgoBjElsmUGY1Ljosg_9, "libSDL2.dylib", 13);
 STRING_LITERAL(TM_ZcjcXgoBjElsmUGY1Ljosg_10, "libSDL2.dylib", 13);
+STRING_LITERAL(TM_ZcjcXgoBjElsmUGY1Ljosg_61, "contains({MouseWheel}, event216407.kind) ", 41);
+STRING_LITERAL(TM_ZcjcXgoBjElsmUGY1Ljosg_64, "contains({MouseButtonDown, MouseButtonUp}, event216007.kind) ", 61);
+STRING_LITERAL(TM_ZcjcXgoBjElsmUGY1Ljosg_65, "contains({ControllerDeviceAdded, ControllerDeviceRemoved}, even"
+"t219607.kind) ", 77);
+STRING_LITERAL(TM_ZcjcXgoBjElsmUGY1Ljosg_66, "contains({ControllerButtonDown, ControllerButtonUp}, event21920"
+"7.kind) ", 71);
+STRING_LITERAL(TM_ZcjcXgoBjElsmUGY1Ljosg_67, "contains({ControllerAxisMotion}, event218807.kind) ", 51);
+STRING_LITERAL(TM_ZcjcXgoBjElsmUGY1Ljosg_68, "contains({WindowEvent}, event214090.kind) ", 42);
+STRING_LITERAL(TM_ZcjcXgoBjElsmUGY1Ljosg_69, "contains({KeyDown, KeyUp}, event214407.kind) ", 45);
 
 static N_INLINE(void, nimFrame)(TFrame* s) {
 	NI T1_;
@@ -176,6 +374,178 @@ static N_INLINE(void, nimFrame)(TFrame* s) {
 
 static N_INLINE(void, popFrame)(void) {
 	framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw = (*framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw).prev;
+}
+
+N_CDECL(TY_Ye8PLO8qqXk1tek2VP9c0UQ, rect_GH33Rh9bTnVBRLuu9bU7xoyA)(int x, int y, int w, int h) {
+	TY_Ye8PLO8qqXk1tek2VP9c0UQ result;
+	nimfr_("rect", "sdl2.nim")
+	memset((void*)(&result), 0, sizeof(result));
+	nimln_(1766, "sdl2.nim");
+	result.Field0 = x;
+	nimln_(1767, "sdl2.nim");
+	result.Field1 = y;
+	nimln_(1768, "sdl2.nim");
+	result.Field2 = w;
+	nimln_(1769, "sdl2.nim");
+	result.Field3 = h;
+	popFrame();
+	return result;
+}
+
+N_NIMCALL(int, toCint_HzAk6ilB5r7Uod8u4Tk9bdA)(TextureAccess_lHfWejC67dkj9bzL3rlYUdw some) {
+	int result;
+	nimfr_("toCint", "sdl2.nim")
+	result = (int)0;
+	nimln_(332, "sdl2.nim");
+	result = ((int) (some));
+	popFrame();
+	return result;
+}
+
+N_NIMCALL(MouseWheelEventObj_XL6XlXxawDE0K4y7eEOqtg*, wheel_yMsteBccSbJ6JRFkjgZ9c4g)(Event_Uzh9aP43ffUpM9aa6vZvNEug* event) {
+	MouseWheelEventObj_XL6XlXxawDE0K4y7eEOqtg* result;
+	nimfr_("wheel", "sdl2.nim")
+{	result = (MouseWheelEventObj_XL6XlXxawDE0K4y7eEOqtg*)0;
+	nimln_(616, "sdl2.nim");
+	{
+		if (!!(((*event).kind == ((EventType_9ayvRjKFMoE6pV9bOp5OUI5w) 1027)))) goto LA3_;
+		failedAssertImpl_aDmpBTs9cPuXp0Mp9cfiNeyA(((NimStringDesc*) &TM_ZcjcXgoBjElsmUGY1Ljosg_61));
+	}
+	LA3_: ;
+	nimln_(617, "sdl2.nim");
+	result = ((MouseWheelEventObj_XL6XlXxawDE0K4y7eEOqtg*) (event));
+	goto BeforeRet_;
+	}BeforeRet_: ;
+	popFrame();
+	return result;
+}
+
+N_NIMCALL(MouseButtonEventObj_ahKE9c3Zfqc3CPLu4G61DYw*, button_PDS8usS8SPsAbtV7QDFnVQ)(Event_Uzh9aP43ffUpM9aa6vZvNEug* event) {
+	MouseButtonEventObj_ahKE9c3Zfqc3CPLu4G61DYw* result;
+	nimfr_("button", "sdl2.nim")
+{	result = (MouseButtonEventObj_ahKE9c3Zfqc3CPLu4G61DYw*)0;
+	nimln_(616, "sdl2.nim");
+	{
+		if (!!(((*event).kind == ((EventType_9ayvRjKFMoE6pV9bOp5OUI5w) 1025) || (*event).kind == ((EventType_9ayvRjKFMoE6pV9bOp5OUI5w) 1026)))) goto LA3_;
+		failedAssertImpl_aDmpBTs9cPuXp0Mp9cfiNeyA(((NimStringDesc*) &TM_ZcjcXgoBjElsmUGY1Ljosg_64));
+	}
+	LA3_: ;
+	nimln_(617, "sdl2.nim");
+	result = ((MouseButtonEventObj_ahKE9c3Zfqc3CPLu4G61DYw*) (event));
+	goto BeforeRet_;
+	}BeforeRet_: ;
+	popFrame();
+	return result;
+}
+
+N_NIMCALL(ControllerDeviceEventObj_bJ8BUI9cpm49brtlN8sw6C9cg*, cdevice_3m9aAR1Sx5O3229bognx7NQQ)(Event_Uzh9aP43ffUpM9aa6vZvNEug* event) {
+	ControllerDeviceEventObj_bJ8BUI9cpm49brtlN8sw6C9cg* result;
+	nimfr_("cdevice", "sdl2.nim")
+{	result = (ControllerDeviceEventObj_bJ8BUI9cpm49brtlN8sw6C9cg*)0;
+	nimln_(616, "sdl2.nim");
+	{
+		if (!!(((*event).kind == ((EventType_9ayvRjKFMoE6pV9bOp5OUI5w) 1619) || (*event).kind == ((EventType_9ayvRjKFMoE6pV9bOp5OUI5w) 1620)))) goto LA3_;
+		failedAssertImpl_aDmpBTs9cPuXp0Mp9cfiNeyA(((NimStringDesc*) &TM_ZcjcXgoBjElsmUGY1Ljosg_65));
+	}
+	LA3_: ;
+	nimln_(617, "sdl2.nim");
+	result = ((ControllerDeviceEventObj_bJ8BUI9cpm49brtlN8sw6C9cg*) (event));
+	goto BeforeRet_;
+	}BeforeRet_: ;
+	popFrame();
+	return result;
+}
+
+N_NIMCALL(ControllerButtonEventObj_iK49bb6NrW4W2tmwGPEnoEg*, cbutton_3ZbzWxKNDIWOAVSYxE6n1Q)(Event_Uzh9aP43ffUpM9aa6vZvNEug* event) {
+	ControllerButtonEventObj_iK49bb6NrW4W2tmwGPEnoEg* result;
+	nimfr_("cbutton", "sdl2.nim")
+{	result = (ControllerButtonEventObj_iK49bb6NrW4W2tmwGPEnoEg*)0;
+	nimln_(616, "sdl2.nim");
+	{
+		if (!!(((*event).kind == ((EventType_9ayvRjKFMoE6pV9bOp5OUI5w) 1617) || (*event).kind == ((EventType_9ayvRjKFMoE6pV9bOp5OUI5w) 1618)))) goto LA3_;
+		failedAssertImpl_aDmpBTs9cPuXp0Mp9cfiNeyA(((NimStringDesc*) &TM_ZcjcXgoBjElsmUGY1Ljosg_66));
+	}
+	LA3_: ;
+	nimln_(617, "sdl2.nim");
+	result = ((ControllerButtonEventObj_iK49bb6NrW4W2tmwGPEnoEg*) (event));
+	goto BeforeRet_;
+	}BeforeRet_: ;
+	popFrame();
+	return result;
+}
+
+N_NIMCALL(ControllerAxisEventObj_9cAGKChsgWcmSe2jRpXieaw*, caxis_RK85I44RdqiHvaxwpFbCmQ)(Event_Uzh9aP43ffUpM9aa6vZvNEug* event) {
+	ControllerAxisEventObj_9cAGKChsgWcmSe2jRpXieaw* result;
+	nimfr_("caxis", "sdl2.nim")
+{	result = (ControllerAxisEventObj_9cAGKChsgWcmSe2jRpXieaw*)0;
+	nimln_(616, "sdl2.nim");
+	{
+		if (!!(((*event).kind == ((EventType_9ayvRjKFMoE6pV9bOp5OUI5w) 1616)))) goto LA3_;
+		failedAssertImpl_aDmpBTs9cPuXp0Mp9cfiNeyA(((NimStringDesc*) &TM_ZcjcXgoBjElsmUGY1Ljosg_67));
+	}
+	LA3_: ;
+	nimln_(617, "sdl2.nim");
+	result = ((ControllerAxisEventObj_9cAGKChsgWcmSe2jRpXieaw*) (event));
+	goto BeforeRet_;
+	}BeforeRet_: ;
+	popFrame();
+	return result;
+}
+
+N_NIMCALL(WindowEventObj_d6XCemaEKzK59bxf1YxrwlA*, window_nUyoCwcDawc7wu1noDcQag)(Event_Uzh9aP43ffUpM9aa6vZvNEug* event) {
+	WindowEventObj_d6XCemaEKzK59bxf1YxrwlA* result;
+	nimfr_("window", "sdl2.nim")
+{	result = (WindowEventObj_d6XCemaEKzK59bxf1YxrwlA*)0;
+	nimln_(616, "sdl2.nim");
+	{
+		if (!!(((*event).kind == ((EventType_9ayvRjKFMoE6pV9bOp5OUI5w) 512)))) goto LA3_;
+		failedAssertImpl_aDmpBTs9cPuXp0Mp9cfiNeyA(((NimStringDesc*) &TM_ZcjcXgoBjElsmUGY1Ljosg_68));
+	}
+	LA3_: ;
+	nimln_(617, "sdl2.nim");
+	result = ((WindowEventObj_d6XCemaEKzK59bxf1YxrwlA*) (event));
+	goto BeforeRet_;
+	}BeforeRet_: ;
+	popFrame();
+	return result;
+}
+
+N_NIMCALL(KeyboardEventObj_T9cLiQTAfT4u62zIltLlWzQ*, key_Sy9cYLza36NW1QN9asfW9a0LA)(Event_Uzh9aP43ffUpM9aa6vZvNEug* event) {
+	KeyboardEventObj_T9cLiQTAfT4u62zIltLlWzQ* result;
+	nimfr_("key", "sdl2.nim")
+{	result = (KeyboardEventObj_T9cLiQTAfT4u62zIltLlWzQ*)0;
+	nimln_(616, "sdl2.nim");
+	{
+		if (!!(((*event).kind == ((EventType_9ayvRjKFMoE6pV9bOp5OUI5w) 768) || (*event).kind == ((EventType_9ayvRjKFMoE6pV9bOp5OUI5w) 769)))) goto LA3_;
+		failedAssertImpl_aDmpBTs9cPuXp0Mp9cfiNeyA(((NimStringDesc*) &TM_ZcjcXgoBjElsmUGY1Ljosg_69));
+	}
+	LA3_: ;
+	nimln_(617, "sdl2.nim");
+	result = ((KeyboardEventObj_T9cLiQTAfT4u62zIltLlWzQ*) (event));
+	goto BeforeRet_;
+	}BeforeRet_: ;
+	popFrame();
+	return result;
+}
+
+N_NIMCALL(int, toInt_9c19cb3na8BCUkuR8QEzk7wA)(Keymod_Ezy2rGsnAFwkomNIvFNZ1A some) {
+	int result;
+	nimfr_("toInt", "keycodes.nim")
+	result = (int)0;
+	nimln_(391, "keycodes.nim");
+	result = ((int) (some));
+	popFrame();
+	return result;
+}
+
+N_NIMCALL(NIM_BOOL, toBool_3fq5Y9cfgYx8q7J9ba6TTYbQ)(Bool32_lrv4aZgVTmBUYdrYUkLMlg some) {
+	NIM_BOOL result;
+	nimfr_("toBool", "sdl2.nim")
+	result = (NIM_BOOL)0;
+	nimln_(330, "sdl2.nim");
+	result = ((NIM_BOOL) (some));
+	popFrame();
+	return result;
 }
 NIM_EXTERNC N_NOINLINE(void, sdl2_sdl2Init000)(void) {
 	Event_Uzh9aP43ffUpM9aa6vZvNEug T1_;
@@ -471,8 +841,44 @@ NTI_RHOlqbW8lSkSefXk1XWVIw_.base = (&NTI_sOGmuBWrSv9c4mZ0oaW1R1w_);
 NTI_RHOlqbW8lSkSefXk1XWVIw_.flags = 3;
 if (!((TM_ZcjcXgoBjElsmUGY1Ljosg_7 = nimLoadLibrary((NimStringDesc*) &TM_ZcjcXgoBjElsmUGY1Ljosg_9))
 )) nimLoadLibraryError((NimStringDesc*) &TM_ZcjcXgoBjElsmUGY1Ljosg_10);
-	Dl_140058_ = (TY_9br0blXFlJAjbk9cGDwi8EgA) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_CreateRGBSurfaceFrom");
-	Dl_140168_ = (TY_OlsILfsIzW9b2h6RP9cRx1pQ) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_ConvertSurface");
-	Dl_140654_ = (TY_09bvyvHFtWbkzL5AHgf0bKw) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_GetError");
+	Dl_223058_ = (TY_9br0blXFlJAjbk9cGDwi8EgA) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_CreateRGBSurfaceFrom");
+	Dl_223168_ = (TY_OlsILfsIzW9b2h6RP9cRx1pQ) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_ConvertSurface");
+	Dl_223654_ = (TY_09bvyvHFtWbkzL5AHgf0bKw) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_GetError");
+	Dl_223397_ = (TY_ZBJ5GRli6YRWUmwPMxvXiw) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_GetTicks");
+	Dl_223485_ = (TY_8bKtXZcxYnKUJLFwBU2xmw) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_GetScancodeFromName");
+	Dl_223488_ = (TY_6jJGBhZP5UsQBecZAlW9bUg) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_GetKeyName");
+	Dl_223476_ = (TY_24AcZiuGxj9aAIKC1Z9aBKgw) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_GetKeyFromScancode");
+	Dl_223464_ = (TY_J1PDbNq7uKOgh20mdTxcDg) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_GetKeyboardState");
+	Dl_222904_ = (TY_vfBise28cLJJujY6ZnHPIw) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_SetRenderTarget");
+	Dl_222882_ = (TY_EH6q2UEpsQbudAOirVaRhQ) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_UpdateTexture");
+	Dl_222617_ = (TY_BzAZji9bzvN1k9ae25rIlb8A) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_SetRenderDrawColor");
+	Dl_223017_ = (TY_zHpDbFN4o9bvP9cAphXAUHXg) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_RenderClear");
+	Dl_222988_ = (TY_wbFMpEnGfJo5HTFBx413GA) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_RenderCopy");
+	Dl_223036_ = (TY_9a8AalbnAaIxTUMpzQQqpjw) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_RenderPresent");
+	Dl_223403_ = (TY_CGFSM2Hc7U0HyNmEEh3xng) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_Delay");
+	Dl_223189_ = (TY_gk5XfBB59a479c3sEPSMZUOg) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_FillRect");
+	Dl_223048_ = (TY_jhdVmRFWTpNd1iR9aS9c5hQQ) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_CreateRGBSurface");
+	Dl_223028_ = (TY_zQuulNED1MWFt3geigWzvg) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_RenderReadPixels");
+	Dl_223069_ = (TY_qBZJbpNSUKmN7D9cXKfuoeg) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_FreeSurface");
+	Dl_223516_ = (TY_yLg9aKhE9aoiOkMB0pzXMlyg) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_GetMouseState");
+	Dl_222719_ = (TY_V9bZBkxVuJzbGuMjLg1FVUw) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_SetWindowFullscreen");
+	Dl_222826_ = (TY_3xgAKCPZlTDmyFCl87eZgg) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_CreateTexture");
+	Dl_223696_ = (TY_kIyA9c9bffk59bCZDzZS0sc8g) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_SetPaletteColors");
+	Dl_222606_ = (TY_FdNQc14l0KrdlpQKlTQjEA) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_RenderSetLogicalSize");
+	Dl_222704_ = (TY_qINgM1UYlIsWdn51nn0qrQ) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_SetWindowSize");
+	Dl_223534_ = (TY_gHZVvnv6jeg9cI9brLoWECJw) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_CaptureMouse");
+	Dl_222670_ = (TY_m9cok4JvX7n8tIbkphyvkhw) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_GetWindowFlags");
+	Dl_223605_ = (TY_b9aXpKFbsyZ0PIk3aYRVCAA) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_PollEvent");
+	Dl_222673_ = (TY_wFKHMJeFuSq6GTOGu9c9ayaw) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_SetWindowTitle");
+	Dl_223708_ = (TY_J5qn9cllF8g9bqRSS9bVM9avbw) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_MapRGB");
+	Dl_223087_ = (TY_WLF2LPFZnB469bJx7k0rQDg) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_RWFromFile");
+	Dl_224006_ = (TY_CS9bxA1KE4RHFQ1vMCkCBmg) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_SetHint");
+	Dl_222765_ = (TY_fvOXafK39cW5YZA9b9bzinu9cw) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_Init");
+	Dl_222789_ = (TY_09bvyvHFtWbkzL5AHgf0bKw) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_GetBasePath");
+	Dl_222791_ = (TY_LR0DuTVmiHsWUuG5hbpBOQ) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_GetPrefPath");
+	Dl_222777_ = (TY_ln4kdL5W9bbX4a1xl8nnVXQ) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_Quit");
+	Dl_223356_ = (TY_1K9aSViCbSUpZMtRI9aw9a2Rg) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_CreateWindow");
+	Dl_222811_ = (TY_eGPD9aEHv9b8sVQMCQaPsYkg) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_CreateRenderer");
+	Dl_223578_ = (TY_CWVVjvObnKbXecMOP3ypVQ) nimGetProcAddr(TM_ZcjcXgoBjElsmUGY1Ljosg_7, "SDL_ShowCursor");
 }
 

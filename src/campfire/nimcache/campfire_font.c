@@ -123,7 +123,7 @@ int refcount;
 N_NIMCALL(FontcolonObjectType__X2ffYU2WngxpLAobRvvlFg*, new_x0QNNzMOATMX9cEhw7StnVg)(void);
 static N_NIMCALL(void, Marker_TY_e3Yr09b8Ck89byTnzx9aiiVoQ)(void* p, NI op);
 N_NIMCALL(NIM_BOOL, eqeq__fEIyLrqUzJ9aTtBmneQeG7w)(TY_Xo4YhcsfLAmbGDNu1Obfcw x, TY_Xo4YhcsfLAmbGDNu1Obfcw y);
-N_NIMCALL(FontcolonObjectType__X2ffYU2WngxpLAobRvvlFg*, setFont_k5tGYTmYCtJGoe9bgMtgWHg)(Surface_sOGmuBWrSv9c4mZ0oaW1R1w* swCanvas, NimStringDesc* filename, NimStringDesc* chars);
+N_NIMCALL(FontcolonObjectType__X2ffYU2WngxpLAobRvvlFg*, setFont_qz60kzqcdWerfTPIoRaBqQ)(Surface_sOGmuBWrSv9c4mZ0oaW1R1w* canvas, NimStringDesc* filename, NimStringDesc* chars);
 N_CDECL(unsigned char*, stbi_load)(NCSTRING filename, int* x, int* y, Components_Leys49afTMjxiW9cmcGy4a9bw* comp, Components_Leys49afTMjxiW9cmcGy4a9bw req_comp);
 N_NIMCALL(NI, mulInt)(NI a, NI b);
 N_NOINLINE(void, raiseOverflow)(void);
@@ -136,36 +136,14 @@ static N_INLINE(NI, addInt)(NI a, NI b);
 static N_INLINE(void, nimFrame)(TFrame* s);
 N_NOINLINE(void, stackOverflow_II46IjNZztN9bmbxUD8dt8g)(void);
 static N_INLINE(void, popFrame)(void);
-static N_INLINE(void, initStackBottomWith)(void* locals);
-N_NOINLINE(void, setStackBottom)(void* theStackBottom);
-NIM_EXTERNC N_NOINLINE(void, systemInit000)(void);
-NIM_EXTERNC N_NOINLINE(void, systemDatInit000)(void);
-NIM_EXTERNC N_NOINLINE(void, stdlib_macrosInit000)(void);
-NIM_EXTERNC N_NOINLINE(void, stdlib_macrosDatInit000)(void);
-NIM_EXTERNC N_NOINLINE(void, stdlib_unsignedInit000)(void);
-NIM_EXTERNC N_NOINLINE(void, stdlib_unsignedDatInit000)(void);
-NIM_EXTERNC N_NOINLINE(void, stdlib_parseutilsInit000)(void);
-NIM_EXTERNC N_NOINLINE(void, stdlib_parseutilsDatInit000)(void);
-NIM_EXTERNC N_NOINLINE(void, stdlib_mathInit000)(void);
-NIM_EXTERNC N_NOINLINE(void, stdlib_mathDatInit000)(void);
-NIM_EXTERNC N_NOINLINE(void, stdlib_algorithmInit000)(void);
-NIM_EXTERNC N_NOINLINE(void, stdlib_algorithmDatInit000)(void);
-NIM_EXTERNC N_NOINLINE(void, stdlib_strutilsInit000)(void);
-NIM_EXTERNC N_NOINLINE(void, stdlib_strutilsDatInit000)(void);
-NIM_EXTERNC N_NOINLINE(void, sdl2_sdl2Init000)(void);
-NIM_EXTERNC N_NOINLINE(void, sdl2_sdl2DatInit000)(void);
-NIM_EXTERNC N_NOINLINE(void, campfire_stb_imageInit000)(void);
-NIM_EXTERNC N_NOINLINE(void, campfire_stb_imageDatInit000)(void);
-NIM_EXTERNC N_NOINLINE(void, NimMainModule)(void);
-NIM_EXTERNC N_NOINLINE(void, fontDatInit000)(void);
 TNimType NTI_X2ffYU2WngxpLAobRvvlFg_;
 extern TNimType NTI_Ye8PLO8qqXk1tek2VP9c0UQ_;
 TNimType NTI_Q7mQxFMGnOjMzRwKNAb8rQ_;
 extern TNimType NTI_RHOlqbW8lSkSefXk1XWVIw_;
 TNimType NTI_e3Yr09b8Ck89byTnzx9aiiVoQ_;
-extern TY_9br0blXFlJAjbk9cGDwi8EgA Dl_140058_;
-extern TY_OlsILfsIzW9b2h6RP9cRx1pQ Dl_140168_;
-extern TY_09bvyvHFtWbkzL5AHgf0bKw Dl_140654_;
+extern TY_9br0blXFlJAjbk9cGDwi8EgA Dl_223058_;
+extern TY_OlsILfsIzW9b2h6RP9cRx1pQ Dl_223168_;
+extern TY_09bvyvHFtWbkzL5AHgf0bKw Dl_223654_;
 extern TFrame* framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw;
 STRING_LITERAL(TM_sApgjWmgjI8GxczXDtC9aHg_3, "error loading font: ", 20);
 NIM_CONST TY_Ye8PLO8qqXk1tek2VP9c0UQ TM_sApgjWmgjI8GxczXDtC9aHg_5 = {((int) 0),
@@ -273,7 +251,7 @@ static N_INLINE(void, popFrame)(void) {
 	framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw = (*framePtr_HRfVMH3jYeBJz6Q6X9b6Ptw).prev;
 }
 
-N_NIMCALL(FontcolonObjectType__X2ffYU2WngxpLAobRvvlFg*, setFont_k5tGYTmYCtJGoe9bgMtgWHg)(Surface_sOGmuBWrSv9c4mZ0oaW1R1w* swCanvas, NimStringDesc* filename, NimStringDesc* chars) {
+N_NIMCALL(FontcolonObjectType__X2ffYU2WngxpLAobRvvlFg*, setFont_qz60kzqcdWerfTPIoRaBqQ)(Surface_sOGmuBWrSv9c4mZ0oaW1R1w* canvas, NimStringDesc* filename, NimStringDesc* chars) {
 	FontcolonObjectType__X2ffYU2WngxpLAobRvvlFg* result;
 	FontcolonObjectType__X2ffYU2WngxpLAobRvvlFg* font;
 	int w;
@@ -313,9 +291,9 @@ N_NIMCALL(FontcolonObjectType__X2ffYU2WngxpLAobRvvlFg*, setFont_k5tGYTmYCtJGoe9b
 	nimln_(20, "font.nim");
 	TM_sApgjWmgjI8GxczXDtC9aHg_4 = mulInt(w, ((NI32) 4));
 	if (TM_sApgjWmgjI8GxczXDtC9aHg_4 < (-2147483647 -1) || TM_sApgjWmgjI8GxczXDtC9aHg_4 > 2147483647) raiseOverflow();
-	surface = Dl_140058_(((void*) (pixels)), w, h, ((int) 32), (NI32)(TM_sApgjWmgjI8GxczXDtC9aHg_4), ((NU32) IL64(4278190080)), ((NU32) 16711680), ((NU32) 65280), ((NU32) 255));
+	surface = Dl_223058_(((void*) (pixels)), w, h, ((int) 32), (NI32)(TM_sApgjWmgjI8GxczXDtC9aHg_4), ((NU32) IL64(4278190080)), ((NU32) 16711680), ((NU32) 65280), ((NU32) 255));
 	nimln_(21, "font.nim");
-	(*font).surface = Dl_140168_(surface, (*swCanvas).format, ((int) 0));
+	(*font).surface = Dl_223168_(surface, (*canvas).format, ((int) 0));
 	nimln_(22, "font.nim");
 	{
 		NCSTRING T9_;
@@ -323,7 +301,7 @@ N_NIMCALL(FontcolonObjectType__X2ffYU2WngxpLAobRvvlFg*, setFont_k5tGYTmYCtJGoe9b
 		if (!((*font).surface == NIM_NIL)) goto LA7_;
 		nimln_(23, "font.nim");
 		T9_ = (NCSTRING)0;
-		T9_ = Dl_140654_();
+		T9_ = Dl_223654_();
 		T10_ = (NimStringDesc*)0;
 		T10_ = cstrToNimstr(T9_);
 		printf("%s\012", T10_? (T10_)->data:"nil");
@@ -545,68 +523,12 @@ N_NIMCALL(FontcolonObjectType__X2ffYU2WngxpLAobRvvlFg*, setFont_k5tGYTmYCtJGoe9b
 	popFrame();
 	return result;
 }
-
-static N_INLINE(void, initStackBottomWith)(void* locals) {
-	setStackBottom(locals);
-}
-void PreMainInner(void) {
-	systemInit000();
-	stdlib_macrosDatInit000();
-	stdlib_unsignedDatInit000();
-	stdlib_parseutilsDatInit000();
-	stdlib_mathDatInit000();
-	stdlib_algorithmDatInit000();
-	stdlib_strutilsDatInit000();
-	sdl2_sdl2DatInit000();
-	campfire_stb_imageDatInit000();
-	fontDatInit000();
-	stdlib_macrosInit000();
-	stdlib_unsignedInit000();
-	stdlib_parseutilsInit000();
-	stdlib_mathInit000();
-	stdlib_algorithmInit000();
-	stdlib_strutilsInit000();
-	sdl2_sdl2Init000();
-	campfire_stb_imageInit000();
-}
-
-void PreMain(void) {
-	void (*volatile inner)(void);
-	systemDatInit000();
-	inner = PreMainInner;
-	initStackBottomWith((void *)&inner);
-	(*inner)();
-}
-
-int cmdCount;
-char** cmdLine;
-char** gEnv;
-N_CDECL(void, NimMainInner)(void) {
-	NimMainModule();
-}
-
-N_CDECL(void, NimMain)(void) {
-	void (*volatile inner)(void);
-	PreMain();
-	inner = NimMainInner;
-	initStackBottomWith((void *)&inner);
-	(*inner)();
-}
-
-int main(int argc, char** args, char** env) {
-	cmdLine = args;
-	cmdCount = argc;
-	gEnv = env;
-	NimMain();
-	return nim_program_result;
-}
-
-NIM_EXTERNC N_NOINLINE(void, NimMainModule)(void) {
+NIM_EXTERNC N_NOINLINE(void, campfire_fontInit000)(void) {
 	nimfr_("font", "font.nim")
 	popFrame();
 }
 
-NIM_EXTERNC N_NOINLINE(void, fontDatInit000)(void) {
+NIM_EXTERNC N_NOINLINE(void, campfire_fontDatInit000)(void) {
 static TNimNode* TM_sApgjWmgjI8GxczXDtC9aHg_2[2];
 static TNimNode TM_sApgjWmgjI8GxczXDtC9aHg_0[3];
 NTI_X2ffYU2WngxpLAobRvvlFg_.size = sizeof(FontcolonObjectType__X2ffYU2WngxpLAobRvvlFg);

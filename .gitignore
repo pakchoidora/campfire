@@ -2,7 +2,7 @@ nimcache
 .DS_Store
 
 .settings/
-./build/
+build/
 
 *~
 *.swp
